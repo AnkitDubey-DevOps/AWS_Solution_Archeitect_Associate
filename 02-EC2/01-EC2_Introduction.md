@@ -1,6 +1,6 @@
-# Amazon EC2 (Elastic Compute Cloud)
+## Amazon EC2 (Elastic Compute Cloud)
 
-## What is Amazon EC2?
+### What is Amazon EC2?
 
 Amazon EC2 (Elastic Compute Cloud) is a web service provided by AWS that allows users to launch and manage virtual servers in the cloud.
 
@@ -9,7 +9,7 @@ Instead of purchasing and maintaining physical servers, you can rent virtual mac
 > EC2 = Infrastructure as a Service (IaaS)
 
 
-# Core EC2 Ecosystem
+### Core EC2 Ecosystem
 
 EC2 rarely works alone.
 
@@ -27,9 +27,9 @@ EC2 rarely works alone.
 
 ---
 
-# EC2 Components
+### EC2 Components
 
-## 1. EC2 Instance
+### 1. EC2 Instance
 
 An EC2 Instance is a virtual machine running in AWS.
 
@@ -49,7 +49,7 @@ You can:
 
 ---
 
-## 2. EBS (Elastic Block Store)
+### 2. EBS (Elastic Block Store)
 
 EBS is persistent storage attached to an EC2 instance.
 
@@ -69,7 +69,7 @@ Hard Disk = EBS
 
 ---
 
-## 3. ELB (Elastic Load Balancer)
+### 3. ELB (Elastic Load Balancer)
 
 Distributes incoming traffic across multiple EC2 instances.
 
@@ -107,7 +107,7 @@ Benefits:
 
 ---
 
-## 4. Auto Scaling Group (ASG)
+### 4. Auto Scaling Group (ASG)
 
 Automatically adjusts the number of EC2 instances based on traffic.
 
@@ -135,7 +135,7 @@ Benefits:
 - Improved reliability
 
 
-# Security Groups
+## Security Groups
 
 A Security Group acts as a virtual firewall for an EC2 instance.
 
@@ -163,9 +163,9 @@ Only allowed traffic can enter.
 
 ---
 
-# EC2 User Data
+## EC2 User Data
 
-## What is User Data?
+### What is User Data?
 
 User Data is a startup script that runs automatically when an EC2 instance launches.
 
@@ -181,7 +181,7 @@ Configure Server
 
 ---
 
-## Why Use User Data?
+### Why Use User Data?
 
 Automation.
 
@@ -197,7 +197,7 @@ You can automate everything during launch.
 
 ---
 
-## Example User Data Script
+### Example User Data Script
 
 ```bash
 #!/bin/bash
@@ -215,7 +215,7 @@ echo "Hello from EC2" > /var/www/html/index.html
 
 ---
 
-## What Happens?
+### What Happens?
 
 ```text
 Instance Launches
@@ -243,7 +243,7 @@ Hello from EC2
 
 ---
 
-## Important Note
+### Important Note
 
 By default, User Data runs:
 
@@ -259,7 +259,7 @@ First Boot
 
 ---
 
-# EC2 Instance Types
+### EC2 Instance Types
 
 AWS offers different instance families optimized for different workloads.
 
@@ -279,7 +279,7 @@ Breakdown:
 
 ---
 
-# General Purpose Instances
+### General Purpose Instances
 
 Examples:
 
@@ -302,7 +302,7 @@ Use Cases:
 
 ---
 
-# Compute Optimized Instances
+### Compute Optimized Instances
 
 Examples:
 
@@ -322,7 +322,7 @@ Use Cases:
 
 ---
 
-# Memory Optimized Instances
+### Memory Optimized Instances
 
 Examples:
 
@@ -341,7 +341,7 @@ Use Cases:
 
 ---
 
-# Instance Family Comparison
+### Instance Family Comparison
 
 | Family | Optimized For |
 |----------|--------------|
@@ -353,9 +353,9 @@ Use Cases:
 | P | GPU Workloads |
 | G | Graphics Workloads |
 
-# AWS EC2 Purchasing Options
+## AWS EC2 Purchasing Options
 
-## Introduction
+### Introduction
 
 AWS provides multiple purchasing options for EC2 instances to help customers optimize costs based on workload requirements.
 
@@ -374,9 +374,9 @@ Think of EC2 purchasing options like booking a hotel room:
 | Capacity Reservation | Reserve a room even if you don't stay there |
 
 
-# 1. On-Demand Instances
+### 1. On-Demand Instances
 
-## What is On-Demand?
+### What is On-Demand?
 
 On-Demand instances allow you to pay only for the resources you use.
 
@@ -396,14 +396,14 @@ Pay Only For Usage
 
 ---
 
-## Billing
+### Billing
 
 Typically billed:
 
 - Per second (Linux)
 - Per hour (some operating systems)
 
-## Drawbacks
+### Drawbacks
 
 ❌ Highest cost
 
@@ -411,9 +411,9 @@ Typically billed:
 
 ---
 
-# 2. Reserved Instances (RI)
+### 2. Reserved Instances (RI)
 
-## What are Reserved Instances?
+### What are Reserved Instances?
 
 Reserved Instances provide significant discounts in exchange for a commitment.
 
@@ -424,7 +424,7 @@ Commitment periods:
 
 ---
 
-## Discount
+### Discount
 
 Can save up to:
 
@@ -433,7 +433,7 @@ Can save up to:
 ```
 
 
-## Payment Options
+### Payment Options
 
 ### No Upfront
 
@@ -449,9 +449,9 @@ Pay entire reservation cost.
 
 Most discount.
 
-# Convertible Reserved Instances
+### Convertible Reserved Instances
 
-## What Are Convertible RIs?
+### What Are Convertible RIs?
 
 A special type of Reserved Instance that allows modifications later.
 
@@ -462,7 +462,7 @@ You can change:
 - Operating System
 - Tenancy
 
-# Standard vs Convertible RI
+### Standard vs Convertible RI
 
 | Feature | Standard RI | Convertible RI |
 |-----------|------------|----------------|
@@ -473,9 +473,9 @@ You can change:
 
 ---
 
-# 3. Savings Plans
+### 3. Savings Plans
 
-## What Are Savings Plans?
+### What Are Savings Plans?
 
 Savings Plans provide discounts in exchange for committing to a specific amount of spending.
 
@@ -489,14 +489,14 @@ AWS applies discounts automatically.
 
 ---
 
-## Commitment Period
+### Commitment Period
 
 - 1 Year
 - 3 Years
 
 ---
 
-## Benefits
+### Benefits
 
 Up to:
 
@@ -506,7 +506,7 @@ Up to:
 
 ---
 
-## Flexibility
+### Flexibility
 
 Can change:
 
@@ -518,7 +518,7 @@ Can change:
 Depending on Savings Plan type.
 
 
-# Reserved Instances vs Savings Plans
+### Reserved Instances vs Savings Plans
 
 | Feature | Reserved Instance | Savings Plan |
 |-----------|------------------|--------------|
@@ -529,9 +529,9 @@ Depending on Savings Plan type.
 
 ---
 
-# 4. Spot Instances
+### 4. Spot Instances
 
-## What Are Spot Instances?
+### What Are Spot Instances?
 
 AWS often has unused EC2 capacity.
 
@@ -543,9 +543,9 @@ Discount:
 Up to 90%
 ```
 
-# Spot Fleet
+### Spot Fleet
 
-## What is Spot Fleet?
+### What is Spot Fleet?
 
 Spot Fleet allows AWS to launch multiple Spot Instances automatically.
 
@@ -567,25 +567,25 @@ AWS chooses the cheapest combination.
 
 ---
 
-## Benefits
+### Benefits
 
 - Better availability
 - Lower costs
 - Automatic optimization
 
-# 5. Dedicated Hosts
+### 5. Dedicated Hosts
 
-## What is a Dedicated Host?
+### What is a Dedicated Host?
 
 A physical server dedicated entirely to your organization.
 
-# 6. Dedicated Instances
+### 6. Dedicated Instances
 
-## What Are Dedicated Instances?
+### What Are Dedicated Instances?
 
 Instances run on hardware dedicated to a single customer.
 
-# Dedicated Instance vs Dedicated Host
+### Dedicated Instance vs Dedicated Host
 
 | Feature | Dedicated Instance | Dedicated Host |
 |-----------|-------------------|----------------|
@@ -596,14 +596,14 @@ Instances run on hardware dedicated to a single customer.
 
 ---
 
-# 7. Capacity Reservations
+### 7. Capacity Reservations
 
-## What is Capacity Reservation?
+### What is Capacity Reservation?
 
 Guarantees EC2 capacity in a specific Availability Zone.
 
 
-# Pricing Comparison Example
+### Pricing Comparison Example
 
 | Option | Approximate Savings |
 |----------|------------------|

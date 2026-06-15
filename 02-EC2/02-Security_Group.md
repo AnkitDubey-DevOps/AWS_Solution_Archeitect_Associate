@@ -1,6 +1,6 @@
-# AWS Security Groups
+## AWS Security Groups
 
-## What is a Security Group?
+### What is a Security Group?
 
 A Security Group (SG) is a virtual firewall that controls inbound and outbound traffic for AWS resources such as EC2 instances.
 
@@ -14,7 +14,7 @@ Think of a Security Group as a gatekeeper that decides:
 
 ---
 
-# Why Do We Need Security Groups?
+### Why Do We Need Security Groups?
 
 Imagine you launch a web server on AWS.
 
@@ -45,9 +45,9 @@ The Security Group filters traffic before it reaches the EC2 instance.
 
 ---
 
-# Security Group Fundamentals
+## Security Group Fundamentals
 
-## Security Groups Contain Only ALLOW Rules
+### Security Groups Contain Only ALLOW Rules
 
 Unlike traditional firewalls:
 
@@ -67,7 +67,7 @@ Everything else is automatically blocked.
 
 ---
 
-## Security Groups Are Stateful
+### Security Groups Are Stateful
 
 One of the most important interview concepts.
 
@@ -101,9 +101,9 @@ You do NOT need an outbound rule for the response.
 
 ---
 
-# Security Group Traffic Flow
+### Security Group Traffic Flow
 
-## Inbound Traffic
+### Inbound Traffic
 
 Traffic coming TO the EC2 instance.
 
@@ -126,7 +126,7 @@ EC2 Instance
 
 ---
 
-## Outbound Traffic
+### Outbound Traffic
 
 Traffic leaving the EC2 instance.
 
@@ -149,7 +149,7 @@ Internet
 
 ---
 
-# Security Group Rules
+### Security Group Rules
 
 A Security Group rule consists of:
 
@@ -171,9 +171,9 @@ Example:
 
 ---
 
-# Understanding Security Group Rules
+### Understanding Security Group Rules
 
-## Example 1: SSH Access
+### Example 1: SSH Access
 
 Rule:
 
@@ -202,7 +202,7 @@ Blocked
 
 ---
 
-## Example 2: Public Website
+### Example 2: Public Website
 
 Rule:
 
@@ -225,7 +225,7 @@ Internet
 
 ---
 
-# Common Security Group Example
+### Common Security Group Example
 
 A Linux Web Server usually requires:
 
@@ -253,11 +253,11 @@ Visualization:
 
 ---
 
-# Security Groups Deep Dive
+### Security Groups Deep Dive
 
 Security Groups control:
 
-## 1. Port Access
+### 1. Port Access
 
 Example:
 
@@ -271,7 +271,7 @@ Example:
 
 ---
 
-## 2. Authorized IP Addresses
+### 2. Authorized IP Addresses
 
 Example:
 
@@ -289,7 +289,7 @@ All Other IPs
 
 ---
 
-## 3. Inbound Network Traffic
+### 3. Inbound Network Traffic
 
 Controls:
 
@@ -299,14 +299,14 @@ Who Can Reach My Server?
 
 ---
 
-## 4. Outbound Network Traffic
+### 4. Outbound Network Traffic
 
 Controls:
 
 ```text
 Where Can My Server Connect?
 ```
-# Security Group Diagram
+### Security Group Diagram
 
 ```text
                   INTERNET
@@ -326,7 +326,7 @@ Where Can My Server Connect?
                  EC2 Instance
 ```
 
-# Classic Ports Every DevOps Engineer Should Know
+### Classic Ports Every DevOps Engineer Should Know
 
 | Port | Protocol | Purpose |
 |--------|----------|----------|
@@ -348,7 +348,7 @@ Where Can My Server Connect?
 
 ---
 
-# SSH into EC2
+### SSH into EC2
 
 SSH allows remote access to Linux servers.
 
@@ -363,7 +363,7 @@ EC2 Instance
 
 ---
 
-## Linux / Mac
+### Linux / Mac
 
 Connect using:
 
@@ -379,7 +379,7 @@ ssh -i my-key.pem ec2-user@54.123.45.67
 
 ---
 
-## Windows
+### Windows
 
 Common Tools:
 
@@ -395,9 +395,9 @@ ssh -i my-key.pem ec2-user@54.123.45.67
 
 ---
 
-# Troubleshooting Security Groups
+### Troubleshooting Security Groups
 
-## Scenario 1
+### Scenario 1
 
 Error:
 
@@ -417,7 +417,7 @@ Check:
 
 ---
 
-## Scenario 2
+### Scenario 2
 
 Error:
 

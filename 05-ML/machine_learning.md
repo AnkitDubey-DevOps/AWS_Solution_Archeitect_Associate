@@ -65,6 +65,7 @@ Rekognition Moderation
     |       |
  Publish  Reject
 
+```
 
 ## Use Cases
 
@@ -91,117 +92,7 @@ Ensure safe learning content.
 
 Amazon Transcribe converts speech into text.
 
-This is a Speech-to-Text service.
-
----
-
-## Example
-
-Input:
-
-```text
-"Welcome to AWS Training"
-```
-
-Output:
-
-```text
-Welcome to AWS Training
-```
-
----
-
-## Features
-
-### Real-Time Transcription
-
-Convert live speech into text.
-
-Example:
-
-- Meetings
-- Live broadcasts
-
----
-
-### Batch Transcription
-
-Process pre-recorded audio files.
-
----
-
-### Speaker Identification
-
-Detect multiple speakers.
-
-Example:
-
-```text
-Speaker 1: Hello
-Speaker 2: Hi
-```
-
----
-
-### Custom Vocabulary
-
-Teach Transcribe uncommon words.
-
-Example:
-
-```text
-Kubernetes
-Terraform
-SageMaker
-```
-
----
-
-### Automatic Language Detection
-
-Identifies spoken language automatically.
-
----
-
-### Call Analytics
-
-Analyze customer service calls.
-
----
-
-## Architecture
-
-```text
-Audio
-  |
-  v
-Amazon Transcribe
-  |
-  v
-Text
-```
-
----
-
-## Use Cases
-
-### Call Centers
-
-Store call transcripts.
-
-### Meeting Notes
-
-Generate meeting summaries.
-
-### Podcasts
-
-Create searchable transcripts.
-
-### Healthcare
-
-Doctors dictate notes.
-
----
+This is a Speech-to-Text service.It automatically detect the language.
 
 # Amazon Polly
 
@@ -211,86 +102,6 @@ Amazon Polly converts text into human-like speech.
 
 This is a Text-to-Speech (TTS) service.
 
----
-
-## Example
-
-Input:
-
-```text
-Welcome to AWS Training
-```
-
-Output:
-
-```text
-Audio Speech
-```
-
----
-
-## Voice Types
-
-### Standard Voices
-
-Basic voices.
-
----
-
-### Neural Voices
-
-More natural and realistic.
-
----
-
-### Generative Voices
-
-Most advanced and human-like.
-
----
-
-## Features
-
-- Multiple languages
-- Male and female voices
-- MP3 output
-- Realistic speech synthesis
-
----
-
-## Architecture
-
-```text
-Text
- |
- v
-Amazon Polly
- |
- v
-Speech
-```
-
----
-
-## Use Cases
-
-### Audiobooks
-
-Convert books to audio.
-
-### IVR Systems
-
-Phone menu systems.
-
-### Accessibility
-
-Read website content aloud.
-
-### Virtual Assistants
-
-AI voice assistants.
-
----
 
 # Amazon Polly Lexicons
 

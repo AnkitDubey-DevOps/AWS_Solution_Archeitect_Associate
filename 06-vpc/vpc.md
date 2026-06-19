@@ -70,4 +70,18 @@ AWS provides two layers of firewalls. Understanding the difference is critical f
 | **Rules** | **Allow Only.** You cannot explicitly **"Deny"** an IP. | **Allow and Deny.** You can block specific IPs (e.g., a known attacker). |
 | **Use Case** | Primary defense. Used for every resource. | Secondary defense. Used for blocking specific threats or creating DMZs. |
 
----
+## What is a Bastion Host?
+
+A Bastion Host is a special EC2 instance placed in a **Public Subnet** that allows administrators to securely access EC2 instances in **Private Subnets**.
+
+## What is a NAT Instance?
+
+A NAT Instance is an EC2 instance configured to provide Internet access for resources in a Private Subnet.
+
+NAT = Network Address Translation
+
+Allows EC2 instances in private subnets to connect to the Internet.
+
+Must be launched in a public subnet
+
+Must have Elastic IP attached to it.

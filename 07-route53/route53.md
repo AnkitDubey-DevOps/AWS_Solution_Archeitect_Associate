@@ -237,3 +237,58 @@ Information Stored in an SOA Record
 5. Retry Interval : Time before retrying if a refresh attempt fails.
 6. Expire Time : Time after which secondary servers stop serving the zone if updates cannot be obtained.
 7. TTL (Time To Live) : Default caching duration for DNS records.
+
+## Routing Policies
+
+### 1. Simple Routing Policy
+The Simple Routing Policy is the default routing method in Route 53. It maps a single domain name to a single IP address or endpoint. This is best for cases where you have only one resource handling all traffic.
+
+### 2. Weighted Routing Policy
+The Weighted Routing Policy allows you to distribute traffic between multiple resources based on predefined weights.
+
+Example
+You have two EC2 instances:
+192.0.2.44 (Weight: 70%)
+192.0.2.55 (Weight: 30%)
+You configure the A records in Route 53
+
+70% of traffic goes to 192.0.2.44, and 30% goes to 192.0.2.55
+
+### 3. Latency-based Routing Policy
+The Latency-based Routing Policy sends requests to the AWS region that provides the lowest network latency for the user.
+
+Example
+You have two EC2 instances:
+
+us-east-1 (Virginia) – 192.0.2.44
+
+eu-central-1 (Frankfurt) – 192.0.2.55
+
+Route 53 determines that a user in New York has lower latency to us-east-1 and a user in Germany has lower latency to eu-central-1
+
+When to use?
+
+Optimizing performance for global users
+
+Distributing traffic based on geographic latency
+
+### 4. Route 53 Geolocation Routing Policy
+
+Amazon Route 53’s Geolocation Routing Policy allows DNS queries to be routed based on the user’s geographic location. This ensures users from different regions are directed to the nearest or most appropriate AWS resource, instead of relying solely on network latency
+
+### 5. Failover Routing Policy
+The Failover Routing Policy is used for high availability setups where traffic is directed to a primary resource, and if it fails, it is routed to a secondary resource.
+
+Primary EC2 instance: 192.0.2.44
+
+Secondary EC2 instance: 192.0.2.55
+
+Route 53 monitors the health of the primary EC2
+
+If the primary EC2 fails, traffic is automatically redirected to the secondary EC2
+
+### 6. Multi-value Answer Routing Policy
+The Multi-value Answer Routing Policy returns multiple IP addresses for a domain name. Route 53 can check the health of each endpoint and return only healthy ones.
+
+### 7. Geoproximity routing
+It is a feature in Amazon Route 53 that directs traffic based on the geographic location of both users and resources. It ensures that users are routed to the nearest resource available, optimizing performance and reducing latency.

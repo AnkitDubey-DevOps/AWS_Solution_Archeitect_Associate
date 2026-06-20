@@ -170,3 +170,70 @@ Route 53 never returns values for records in other hosted zones that have the sa
 
 Hosted Zone → Default Records = NS + SOA
 
+## Migrating DNS to Amazon Route 53
+
+If you are currently using another DNS Service and you want to migrate to Amazon Route 53
+
+→ Start by creating a Hosted Zone.
+
+Route 53 automatically assigns the delegation set, the four name servers, to your Hosted Zone.
+
+→ To ensure that the DNS queries for your domain go to the Route 53 name servers,
+
+Update your registrar's or your DNS service's NS records for the domain to replace the current name servers with the names of the four Route 53 name servers for your Hosted Zone.
+
+The method that you use to update the NS records depends on which registrar or DNS service you are using.
+
+→ Some registrars only allow you to specify name servers using IP addresses; they don't allow you to specify Fully Qualified Domain Names (FQDNs).
+
+If your registrar requires using IP addresses, you can get the IP addresses for your name servers using the dig utility (for Mac/Linux) and nslookup (for Windows).
+
+## Transferring a Domain Between Accounts Within AWS
+Transferring a domain to a different AWS account
+
+If you registered a domain using one AWS account and you want to transfer the domain to another AWS account, you can do so by contacting the AWS Support Center and requesting the transfer.
+
+### Migrating a hosted zone to a different AWS account
+If you are using Route 53 as the DNS service for the domain, Route 53 does not transfer the hosted zone when you transfer a domain to a different AWS account.
+
+If domain registration is associated with one account and the corresponding hosted zone is associated with another account, neither domain registration nor DNS functionality is affected.
+
+The only effect is that you will need to sign in to the Route 53 console using one account to see the domain, and sign in using another account to see the hosted zone.
+
+## Supported DNS Record Types by Route 53
+
+1. A Record (Address Record) : Maps a hostname/domain name to an IPv4 address.
+2. AAAA Record: Maps a hostname/domain name to an IPv6 address.
+3. CNAME Record (Canonical Name) : Creates an alias from one domain/subdomain to another hostname. eg : (web.example.com → www.example.com)
+4. NS Record (Name Server) : Specifies the authoritative name servers for a domain. Used for DNS delegation.
+5. SOA Record (Start of Authority) : Contains administrative information about the DNS zone.
+6. MX Record (Mail Exchange) : Specifies the mail server responsible for receiving emails for a domain. Lower preference value = higher priority.
+
+### NS Records
+NS records define which name server is authoritative to a particular zone or domain name and point you to other DNS servers.
+
+#### A / AAAA Records
+A/AAAA are called host records, like business cards.
+
+#### CNAME Record
+CNAME is an alternative record or alias for another record.
+
+Helpful in redirection or if you want to hide details about your actual servers from the users.
+
+## SOA (Start of Authority) Record
+### What is an SOA Record?
+Every DNS hosted zone contains exactly one SOA (Start of Authority) record.
+
+It is automatically created when a hosted zone is created.
+
+It appears at the beginning of the DNS zone data.
+
+Information Stored in an SOA Record
+
+1. Domain Owner Information : Contact email address of the domain administrator.
+2. Authoritative Name Server : Primary DNS server responsible for the zone.
+3. Serial Number : Version number of the zone. Incremented whenever DNS zone data changes.
+4. Refresh Interval : How often secondary DNS servers check for updates.
+5. Retry Interval : Time before retrying if a refresh attempt fails.
+6. Expire Time : Time after which secondary servers stop serving the zone if updates cannot be obtained.
+7. TTL (Time To Live) : Default caching duration for DNS records.
